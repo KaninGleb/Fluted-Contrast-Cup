@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -7,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:ital,wght@0,700;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:ital,wght@0,700;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Cup</title>
 </head>
@@ -18,27 +15,23 @@
     <section>
         <div class="card">
             <div class="product-img-block">
-                <!-- Левый блок -->
                 <div class="main-img-wrap">
-                    <img class="main-img" src="./assets/image/cup.png" alt="cup">
+                    <img id="main-img" class="main-img" src="./assets/image/cup.png" alt="cup">
                 </div>
                 <div class="preview-wrapper">
-                    <div class="preview selected">
+                    <div class="preview selected" onclick="changeImage('./assets/image/cup.png')">
                         <img src="./assets/image/cup-miniature-1.png" alt="cup-miniature-1">
                     </div>
-                    <div class="preview">
+                    <div class="preview" onclick="changeImage('./assets/image/cup-2.png')">
                         <img src="./assets/image/cup-miniature-2.png" alt="cup-miniature-2">
                     </div>
                 </div>
             </div>
 
             <div class="product-info-block">
-                <!-- Правый блок -->
                 <h1 class="main-title">Fluted Contrast</h1>
                 <span class="subtitle">Mug / 33 cl</span>
-                <p class="text">Fluted Contrast represents the perfect fusion between the aesthetic and the functional.
-                    The design is elegant and modern, created out of a deep respect for Royal British history and
-                    traditions</p>
+                <p class="text">Fluted Contrast represents the perfect fusion between the aesthetic and the functional. The design is elegant and modern, created out of a deep respect for Royal British history and traditions</p>
                 <div class="circles">
                     <h2 class="title">Color options</h2>
                     <ul class="colors-list">
@@ -77,6 +70,8 @@
             </div>
         </div>
     </section>
+
+    <script src="scripts.js"></script>
 </body>
 
 </html>
