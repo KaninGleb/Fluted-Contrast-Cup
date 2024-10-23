@@ -1,6 +1,12 @@
-// Function to change the image
+// Function to change the main image
 function changeImage(imageSrc) {
     document.getElementById('mainImg').src = imageSrc;
+}
+
+// Function to change the thumbnail image
+function changeThumbnail(thumbnailSrc) {
+    const thumbnail = document.querySelector('.preview.selected img');
+    thumbnail.src = thumbnailSrc;
 }
 
 // Function to change the color of the circle
@@ -13,19 +19,39 @@ function changeColor(selectedColor) {
 
     selectedColor.classList.add('selected');
 
-    // Изображения для каждого цвета
+    // Images for each color
     const colorImages = {
-        'blue': './assets/image/main-cup-1/main-cup-1-blue.png',
-        'green': './assets/image/main-cup-1/main-cup-1-green.png',
-        'red': './assets/image/main-cup-1/main-cup-1-red.png',
-        'black': './assets/image/main-cup-1/main-cup-1-black.png',
-        'yellow': './assets/image/main-cup-1/main-cup-1-yellow.png',
+        'blue': {
+            main: './assets/image/main-cup-1/main-cup-1-blue.png',
+            thumbnail: './assets/image/miniature-cup-1/cup-miniature-1-blue.png'
+        },
+        'green': {
+            main: './assets/image/main-cup-1/main-cup-1-green.png',
+            thumbnail: './assets/image/miniature-cup-1/cup-miniature-1-green.png'
+        },
+        'red': {
+            main: './assets/image/main-cup-1/main-cup-1-red.png',
+            thumbnail: './assets/image/miniature-cup-1/cup-miniature-1-red.png'
+        },
+        'black': {
+            main: './assets/image/main-cup-1/main-cup-1-black.png',
+            thumbnail: './assets/image/miniature-cup-1/cup-miniature-1-black.png'
+        },
+        'yellow': {
+            main: './assets/image/main-cup-1/main-cup-1-yellow.png',
+            thumbnail: './assets/image/miniature-cup-1/cup-miniature-1-yellow.png'
+        },
     };
 
-    const colorClass = selectedColor.querySelector('.circle').classList[1]; // Получаем класс цвета
-    const newImageSrc = colorImages[colorClass];
+    const colorClass = selectedColor.querySelector('.circle').classList[1]; // Get the color class
+    const newImageSrc = colorImages[colorClass]?.main;
+    const newThumbnailSrc = colorImages[colorClass]?.thumbnail;
+
     if (newImageSrc) {
-        changeImage(newImageSrc); // Меняем изображение
+        changeImage(newImageSrc); // Change the main image
+    }
+    if (newThumbnailSrc) {
+        changeThumbnail(newThumbnailSrc); // Change the thumbnail image
     }
 }
 
