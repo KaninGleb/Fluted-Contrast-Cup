@@ -1,6 +1,13 @@
 // Function to change the main image
 function changeImage(imageSrc) {
-    document.getElementById('mainImg').src = imageSrc;
+    const mainImg = document.getElementById('mainImg');
+    mainImg.style.opacity = 0; // Затухающая анимация
+
+    // Задержка перед изменением изображения
+    setTimeout(() => {
+        mainImg.src = imageSrc;
+        mainImg.style.opacity = 1; // Появление нового изображения
+    }, 200); // Задержка затухания
 }
 
 // Function to change the thumbnail image
@@ -50,6 +57,7 @@ function changeColor(selectedColor) {
     if (newImageSrc) {
         changeImage(newImageSrc); // Change the main image
     }
+    
     if (newThumbnailSrc) {
         changeThumbnail(newThumbnailSrc); // Change the thumbnail image
     }

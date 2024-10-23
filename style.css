@@ -224,6 +224,11 @@ li:hover {
     transform: translateY(10px);
 }
 
+#mainImg {
+    opacity: 1;
+    transition: opacity 0.2s; /* Плавный переход для затухания */
+}
+
 /* tablet */
 @media screen and (max-width: 1240px) {
     .card {
