@@ -1,6 +1,6 @@
 // Function to change the image
 function changeImage(imageSrc) {
-    document.getElementById('main-img').src = imageSrc;
+    document.getElementById('mainImg').src = imageSrc;
 }
 
 // Function to change the color of the circle
